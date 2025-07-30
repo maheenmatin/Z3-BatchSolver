@@ -10,7 +10,7 @@ import input_output.writer as writer
 class Z3Solver:
     def __init__(self, time_limit, solver_name):
         # Set root directory for robust file paths
-        # CRTSolver -> main -> cvc5_solver.py
+        # Z3-BatchSolver -> z3_solver.py
         # z3_solver.py = file, Z3-BatchSolver = parents[0]
         self.ROOT = Path(__file__).resolve().parents[0]
 
