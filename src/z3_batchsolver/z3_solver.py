@@ -68,5 +68,5 @@ class Z3Solver:
         self.writer.write()
 
 if __name__ == "__main__":
-    z3_solver = Z3Solver("1", "Z3")
+    z3_solver = Z3Solver("30000", "Z3")
     z3_solver.execute()
