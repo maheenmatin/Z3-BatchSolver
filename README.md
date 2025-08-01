@@ -30,10 +30,8 @@
 5. **Run the solver:**
    ```bash
    poetry run python -m z3_batchsolver.z3_solver
-   # or
-   poetry run python src/z3_batchsolver/z3_solver.py
    ```
-
+   
 ---
 
 ### 🚀 Why This Project?
