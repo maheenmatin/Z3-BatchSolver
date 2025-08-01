@@ -1,8 +1,8 @@
 from pathlib import Path
 from z3 import *
 import time
-import input_output.reader as reader
-import input_output.writer as writer
+import z3_batchsolver.input_output.reader as reader
+import z3_batchsolver.input_output.writer as writer
 
 # NOTE: Inspired by code and instructions from the following sources:
 # NOTE: https://ericpony.github.io/z3py-tutorial/guide-examples.htm
@@ -10,9 +10,10 @@ import input_output.writer as writer
 class Z3Solver:
     def __init__(self, time_limit, solver_name):
         # Set root directory for robust file paths
-        # Z3-BatchSolver -> z3_solver.py
-        # z3_solver.py = file, Z3-BatchSolver = parents[0]
-        self.ROOT = Path(__file__).resolve().parents[0]
+        # Z3-BatchSolver -> src -> z3_batchsolver -> z3_solver.py
+        # z3_solver.py = file, z3_batchsolver = parents[0], 
+        # src = parents[1], Z3-BatchSolver = parents[2]
+        self.ROOT = Path(__file__).resolve().parents[2]
 
         # Set absolute paths from root directory
         self.TESTS = self.ROOT / "tests"
@@ -67,5 +68,5 @@ class Z3Solver:
         self.writer.write()
 
 if __name__ == "__main__":
-    z3_solver = Z3Solver("30000", "Z3")
+    z3_solver = Z3Solver("1", "Z3")
     z3_solver.execute()
