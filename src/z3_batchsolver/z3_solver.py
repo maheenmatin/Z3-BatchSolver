@@ -9,7 +9,7 @@ import z3_batchsolver.input_output.writer as writer
 # NOTE: https://ericpony.github.io/z3py-tutorial/guide-examples.htm
 # NOTE: https://z3prover.github.io/papers/programmingz3.html
 class Z3Solver:
-    def __init__(self, time_limit, solver_name="cvc5", tests_dir=None):
+    def __init__(self, time_limit, solver_name="Z3", tests_dir=None):
         if tests_dir is None:
             # Set root directory using existing file structure
             # Z3-BatchSolver -> src -> z3_batchsolver -> z3_solver.py
