@@ -9,7 +9,7 @@ import z3_batchsolver.input_output.writer as writer
 # NOTE: https://ericpony.github.io/z3py-tutorial/guide-examples.htm
 # NOTE: https://z3prover.github.io/papers/programmingz3.html
 class Z3Solver:
-    def __init__(self, time_limit, solver_name="Z3", tests_dir=None):
+    def __init__(self, time_limit="30000", solver_name="Z3", tests_dir=None):
         if tests_dir is None:
             # Set root directory using existing file structure
             # Z3-BatchSolver -> src -> z3_batchsolver -> z3_solver.py
@@ -74,7 +74,7 @@ class Z3Solver:
 # CLI entry point
 def main():
     parser = argparse.ArgumentParser(description="Run the Z3 solver on a directory of SMT2 files.")
-    parser.add_argument("--time_limit", required=True, type=int, 
+    parser.add_argument("--time_limit", type=int, default=30000,
         help="Time limit for each check-sat (in ms).")
     parser.add_argument("--solver_name", default="Z3",
         help="Name for the solver run (used in output results).")
